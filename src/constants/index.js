@@ -4,6 +4,7 @@ import {
   benefitIcon3,
   benefitIcon4,
   benefitImage2,
+  benefitImage3,
   chromecast,
   disc02,
   discord,
@@ -36,21 +37,23 @@ import {
   yourlogo,
 } from "../assets";
 
+import { btc, eth, monero, neo, xrp } from "../assets";
+
 export const navigation = [
   {
     id: "0",
-    title: "Features",
-    url: "#features",
+    title: "Home",
+    url: "/",
   },
   {
     id: "1",
-    title: "Pricing",
-    url: "#pricing",
+    title: "Cryptocurrencies",
+    url: "/currencies",
   },
   {
     id: "2",
-    title: "How to use",
-    url: "#how-to-use",
+    title: "Pricing",
+    url: "#pricing",
   },
   {
     id: "3",
@@ -70,6 +73,8 @@ export const navigation = [
     onlyMobile: true,
   },
 ];
+
+export const cryptoIcons = [btc, eth, monero, neo, xrp];
 
 export const heroIcons = [homeSmile, file02, searchMd, plusSquare];
 
@@ -244,50 +249,50 @@ export const pricing = [
 export const benefits = [
   {
     id: "0",
-    title: "Ask anything",
-    text: "Lets users quickly find answers to their questions without having to search through multiple sources.",
+    title: "Create Your Dashboard",
+    text: "Build a personalized dashboard with your favorite cryptocurrencies and track their performance in real-time.",
     backgroundUrl: "assets/benefits/card-1.svg",
     iconUrl: benefitIcon1,
-    imageUrl: benefitImage2,
+    imageUrl: benefitImage3,
   },
   {
     id: "1",
-    title: "Improve everyday",
-    text: "The app uses natural language processing to understand user queries and provide accurate and relevant responses.",
+    title: "Follow Prices in Real-Time",
+    text: "Stay updated with the latest price movements of your favorite cryptocurrencies with real-time tracking.",
     backgroundUrl: "assets/benefits/card-2.svg",
     iconUrl: benefitIcon2,
-    imageUrl: benefitImage2,
+    imageUrl: benefitImage3,
     light: true,
   },
   {
     id: "2",
-    title: "Connect everywhere",
-    text: "Connect with the AI chatbot from anywhere, on any device, making it more accessible and convenient.",
+    title: "Chat with Like-Minded People",
+    text: "Engage in discussions and share insights with other cryptocurrency enthusiasts under each crypto.",
     backgroundUrl: "assets/benefits/card-3.svg",
     iconUrl: benefitIcon3,
-    imageUrl: benefitImage2,
+    imageUrl: benefitImage3,
   },
   {
     id: "3",
-    title: "Fast responding",
-    text: "Lets users quickly find answers to their questions without having to search through multiple sources.",
+    title: "Read About Each Currency",
+    text: "Access comprehensive information about each cryptocurrency, including historical data, market trends, and more.",
     backgroundUrl: "assets/benefits/card-4.svg",
     iconUrl: benefitIcon4,
-    imageUrl: benefitImage2,
+    imageUrl: benefitImage3,
     light: true,
   },
   {
     id: "4",
-    title: "Ask anything",
-    text: "Lets users quickly find answers to their questions without having to search through multiple sources.",
+    title: "Stay Informed",
+    text: "Get the latest news and updates about the cryptocurrency market directly on your dashboard.",
     backgroundUrl: "assets/benefits/card-5.svg",
     iconUrl: benefitIcon1,
-    imageUrl: benefitImage2,
+    imageUrl: benefitImage3,
   },
   {
     id: "5",
-    title: "Improve everyday",
-    text: "The app uses natural language processing to understand user queries and provide accurate and relevant responses.",
+    title: "Analyze Market Trends",
+    text: "Utilize advanced tools and features to analyze market trends and make informed investment decisions.",
     backgroundUrl: "assets/benefits/card-6.svg",
     iconUrl: benefitIcon2,
     imageUrl: benefitImage2,

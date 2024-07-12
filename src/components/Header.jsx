@@ -2,13 +2,44 @@ import { useLocation } from "react-router-dom";
 import { disablePageScroll, enablePageScroll } from "scroll-lock";
 
 import { brainwave } from "../assets";
+import { blockboard_logo } from "../assets";
 import { navigation } from "../constants";
+
 import Button from "./Button";
 import MenuSvg from "../assets/svg/MenuSvg";
 import { HamburgerMenu } from "./design/Header";
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
+import { removeTokenTimestamp } from "../utils/utils";
+import axios from "axios";
+import Avatar from "./Avatar";
+
+import {
+  useCurrentUser,
+  useSetCurrentUser,
+} from "../context/CurrentUserContext";
 
 const Header = () => {
+  //Current user contexts
+  const currentUser = useCurrentUser();
+  const setCurrentUser = useSetCurrentUser();
+
+  const handleLogout = async () => {
+    //The user is asked to confirm the action
+    const confirmLogout = window.confirm("Are you sure you want to log out?");
+    if (!confirmLogout) return;
+    //That triggers the HTTP POST request using axios
+    try {
+      await axios.post("/dj-rest-auth/logout/");
+      //If successful sets the current user context globally to "null"
+      setCurrentUser(null);
+      //And removes the token timestamp
+      removeTokenTimestamp();
+    } catch (err) {
+      // console.log(err);
+    }
+  };
+
   const pathname = useLocation();
   const [openNavigation, setOpenNavigation] = useState(false);
 
@@ -29,6 +60,53 @@ const Header = () => {
     setOpenNavigation(false);
   };
 
+  const loggedInIcons = (
+    <>
+      <NavLink
+        to={"/"}
+        onClick={handleLogout}
+        className="hidden mr-8 transition-colors button text-n-1/50 hover:text-n-1 lg:block"
+      >
+        <i className="hidden mr-8 transition-colors button text-n-1/50 hover:text-n-1 lg:block"></i>
+        Log out
+      </NavLink>
+
+      <NavLink
+        to={`/profiles/${currentUser?.profile_id}`}
+        className="hidden mr-8 transition-colors button text-n-1/50 hover:text-n-1 lg:block"
+      >
+        <i className="hidden mr-8 transition-colors button text-n-1/50 hover:text-n-1 lg:block"></i>
+        Dashboard
+      </NavLink>
+
+      <NavLink
+        to={`#`}
+        className="hidden mr-8 transition-colors button text-n-1/50 hover:text-n-1 lg:block"
+      >
+        <Avatar
+          src={currentUser?.profile_image}
+          alt="Profile"
+          height={36}
+          text={currentUser?.username}
+        />
+      </NavLink>
+    </>
+  );
+
+  const loggedOutIcons = (
+    <>
+      <a
+        href="#signup"
+        className="hidden mr-8 transition-colors button text-n-1/50 hover:text-n-1 lg:block"
+      >
+        New account
+      </a>
+      <Button className="hidden lg:flex" href="#login">
+        Sign in
+      </Button>
+    </>
+  );
+
   return (
     <div
       className={`fixed top-0 left-0 w-full z-50  border-b border-n-6 lg:bg-n-8/90 lg:backdrop-blur-sm ${
@@ -36,8 +114,14 @@ const Header = () => {
       }`}
     >
       <div className="flex items-center px-5 lg:px-7.5 xl:px-10 max-lg:py-4">
-        <a className="block w-[12rem] xl:mr-8" href="#hero">
-          <img src={brainwave} width={190} height={40} alt="Brainwave" />
+        <a className="block w-[12rem] xl:mr-8" href="/">
+          <img
+            className=""
+            src={blockboard_logo}
+            width={190}
+            height={40}
+            alt="Brainwave"
+          />
         </a>
 
         <nav
@@ -45,7 +129,7 @@ const Header = () => {
             openNavigation ? "flex" : "hidden"
           } fixed top-[5rem] left-0 right-0 bottom-0 bg-n-8 lg:static lg:flex lg:mx-auto lg:bg-transparent`}
         >
-          <div className="relative z-2 flex flex-col items-center justify-center m-auto lg:flex-row">
+          <div className="relative flex flex-col items-center justify-center m-auto z-2 lg:flex-row">
             {navigation.map((item) => (
               <a
                 key={item.id}
@@ -66,16 +150,20 @@ const Header = () => {
 
           <HamburgerMenu />
         </nav>
-
+        {/* 
         <a
           href="#signup"
-          className="button hidden mr-8 text-n-1/50 transition-colors hover:text-n-1 lg:block"
+          className="hidden mr-8 transition-colors button text-n-1/50 hover:text-n-1 lg:block"
         >
           New account
         </a>
         <Button className="hidden lg:flex" href="#login">
           Sign in
-        </Button>
+        </Button> */}
+
+        <nav className="flex flex-row items-center justify-center align-middle">
+          {!currentUser ? loggedInIcons : loggedOutIcons}
+        </nav>
 
         <Button
           className="ml-auto lg:hidden"

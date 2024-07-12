@@ -20,6 +20,7 @@ import chromecast from "./chrome-cast.svg";
 import sliders04 from "./sliders-04.svg";
 import loading from "./loading.png";
 import background from "./background.jpg";
+import blockboard_logo from "./blockboard_logo.svg";
 
 import curve from "./hero/curve.png";
 import robot from "./hero/robot.jpg";
@@ -68,6 +69,7 @@ import benefitIcon2 from "./benefits/icon-2.svg";
 import benefitIcon3 from "./benefits/icon-3.svg";
 import benefitIcon4 from "./benefits/icon-4.svg";
 import benefitImage2 from "./benefits/image-2.png";
+import benefitImage3 from "./benefits/image-bb.webp";
 
 import discordBlack from "./socials/discord.svg";
 import facebook from "./socials/facebook.svg";
@@ -75,7 +77,19 @@ import instagram from "./socials/instagram.svg";
 import telegram from "./socials/telegram.svg";
 import twitter from "./socials/twitter.svg";
 
+import eth from "./crypto/eth.svg";
+import btc from "./crypto/btc.svg";
+import monero from "./crypto/monero.svg";
+import neo from "./crypto/neo.svg";
+import xrp from "./crypto/xrp.svg";
+
 export {
+  eth,
+  btc,
+  monero,
+  xrp,
+  neo,
+  blockboard_logo,
   brainwave,
   check,
   check2,
@@ -139,6 +153,7 @@ export {
   benefitIcon3,
   benefitIcon4,
   benefitImage2,
+  benefitImage3,
   discordBlack,
   facebook,
   instagram,

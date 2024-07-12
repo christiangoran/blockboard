@@ -1,18 +1,18 @@
-import { companyLogos } from "../constants";
+import { cryptoIcons } from "../constants";
 
 const CompanyLogos = ({ className }) => {
   return (
     <div className={className}>
-      <h5 className="tagline mb-6 text-center text-n-1/50">
-        Helping People Create Beautiful Content at
+      <h5 className="mb-6 text-center tagline text-n-1/50">
+        Connecting crypto bro's and their favorite currency
       </h5>
       <ul className="flex">
-        {companyLogos.map((logo, index) => (
+        {cryptoIcons.map((logo, index) => (
           <li
             key={index}
             className="flex item-center justify-center flex-1 h-[8.5rem]"
           >
-            <img src={logo} width={134} height={28} alt={logo} />
+            <img src={logo} width={52} height={28} alt={logo} />
           </li>
         ))}
       </ul>
