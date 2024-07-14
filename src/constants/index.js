@@ -35,6 +35,14 @@ import {
   telegram,
   twitter,
   yourlogo,
+  zcashColor,
+  btcColor,
+  ledgerColor,
+  litecoinColor,
+  miningPoolColor,
+  senderColor,
+  stellarCoinColor,
+  miningCenterColor,
 } from "../assets";
 
 import { btc, eth, monero, neo, xrp } from "../assets";
@@ -83,9 +91,9 @@ export const notificationImages = [notification4, notification3, notification2];
 export const companyLogos = [yourlogo, yourlogo, yourlogo, yourlogo, yourlogo];
 
 export const brainwaveServices = [
-  "Photo generating",
-  "Photo enhance",
-  "Seamless Integration",
+  "Realtime Updates",
+  "Passionate Community",
+  "Boost Your Own Research",
 ];
 
 export const brainwaveServicesIcons = [
@@ -133,7 +141,7 @@ export const roadmap = [
 ];
 
 export const collabText =
-  "With smart automation and top-notch security, it's the perfect solution for teams looking to work smarter.";
+  "With smart dashboard and top-notch security, it's the perfect solution for crypto traders looking to work smarter.";
 
 export const collabContent = [
   {
@@ -143,7 +151,7 @@ export const collabContent = [
   },
   {
     id: "1",
-    title: "Smart Automation",
+    title: "Full Control",
   },
   {
     id: "2",
@@ -210,38 +218,102 @@ export const collabApps = [
   },
 ];
 
+export const cryptoApps = [
+  {
+    id: "0",
+    title: "Btc",
+    icon: btcColor,
+    width: 26,
+    height: 36,
+  },
+  {
+    id: "1",
+    title: "Ledger",
+    icon: ledgerColor,
+    width: 34,
+    height: 36,
+  },
+  {
+    id: "2",
+    title: "Litecoin",
+    icon: litecoinColor,
+    width: 36,
+    height: 28,
+  },
+  {
+    id: "3",
+    title: "Mining",
+    icon: miningCenterColor,
+    width: 34,
+    height: 35,
+  },
+  {
+    id: "4",
+    title: "Send",
+    icon: senderColor,
+    width: 34,
+    height: 34,
+  },
+  {
+    id: "5",
+    title: "Stellar",
+    icon: stellarCoinColor,
+    width: 34,
+    height: 34,
+  },
+  {
+    id: "6",
+    title: "zCash",
+    icon: zcashColor,
+    width: 26,
+    height: 34,
+  },
+  {
+    id: "7",
+    title: "MiningCenter",
+    icon: miningPoolColor,
+    width: 38,
+    height: 32,
+  },
+];
+
 export const pricing = [
   {
     id: "0",
     title: "Basic",
-    description: "AI chatbot, personalized recommendations",
+    description: "Track favorite cryptocurrencies, real-time updates",
     price: "0",
     features: [
-      "An AI chatbot that can understand your queries",
-      "Personalized recommendations based on your preferences",
-      "Ability to explore the app and its features without any cost",
+      "Track up to 5 favorite cryptocurrencies",
+      "Receive real-time price updates",
+      "Basic charting tools",
+      "Access to community discussions",
     ],
   },
   {
     id: "1",
     title: "Premium",
-    description: "Advanced AI chatbot, priority support, analytics dashboard",
+    description: "Advanced tracking, portfolio management, priority support",
     price: "9.99",
     features: [
-      "An advanced AI chatbot that can understand complex queries",
-      "An analytics dashboard to track your conversations",
-      "Priority support to solve issues quickly",
+      "Track unlimited cryptocurrencies",
+      "Advanced charting and technical analysis tools",
+      "Portfolio management features",
+      "Priority support for any issues",
+      "Exclusive access to premium content and insights",
     ],
   },
   {
     id: "2",
     title: "Enterprise",
-    description: "Custom AI chatbot, advanced analytics, dedicated account",
+    description: "Custom solutions, dedicated support, advanced analytics",
     price: null,
     features: [
-      "An AI chatbot that can understand your queries",
-      "Personalized recommendations based on your preferences",
-      "Ability to explore the app and its features without any cost",
+      "Custom solutions tailored to your needs",
+      "Advanced analytics and reporting tools",
+      "Dedicated account manager",
+      "API access for data integration",
+      "Priority support with faster response times",
     ],
   },
 ];
@@ -295,7 +367,7 @@ export const benefits = [
     text: "Utilize advanced tools and features to analyze market trends and make informed investment decisions.",
     backgroundUrl: "assets/benefits/card-6.svg",
     iconUrl: benefitIcon2,
-    imageUrl: benefitImage2,
+    imageUrl: benefitImage3,
   },
 ];
 

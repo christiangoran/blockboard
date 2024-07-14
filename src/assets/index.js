@@ -21,6 +21,7 @@ import sliders04 from "./sliders-04.svg";
 import loading from "./loading.png";
 import background from "./background.jpg";
 import blockboard_logo from "./blockboard_logo.svg";
+import blockboardSymbol from "./blockboard-symbol.svg";
 
 import curve from "./hero/curve.png";
 import robot from "./hero/robot.jpg";
@@ -82,14 +83,31 @@ import btc from "./crypto/btc.svg";
 import monero from "./crypto/monero.svg";
 import neo from "./crypto/neo.svg";
 import xrp from "./crypto/xrp.svg";
+import btcColor from "./crypto/btcColor.svg";
+import ledgerColor from "./crypto/ledgerColor.svg";
+import litecoinColor from "./crypto/litecoinColor.svg";
+import miningCenterColor from "./crypto/mining_centerColor.svg";
+import senderColor from "./crypto/sendColor.svg";
+import stellarCoinColor from "./crypto/stellarColor.svg";
+import zcashColor from "./crypto/zcashColor.svg";
+import miningPoolColor from "./crypto/mining_poolColor.svg";
 
 export {
+  btcColor,
+  ledgerColor,
+  litecoinColor,
+  miningCenterColor,
+  senderColor,
+  stellarCoinColor,
+  zcashColor,
+  miningPoolColor,
   eth,
   btc,
   monero,
   xrp,
   neo,
   blockboard_logo,
+  blockboardSymbol,
   brainwave,
   check,
   check2,
