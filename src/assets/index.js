@@ -22,6 +22,7 @@ import loading from "./loading.png";
 import background from "./background.jpg";
 import blockboard_logo from "./blockboard_logo.svg";
 import blockboardSymbol from "./blockboard-symbol.svg";
+import planet from "./planet.png";
 
 import curve from "./hero/curve.png";
 import robot from "./hero/robot.jpg";
@@ -93,6 +94,7 @@ import zcashColor from "./crypto/zcashColor.svg";
 import miningPoolColor from "./crypto/mining_poolColor.svg";
 
 export {
+  planet,
   btcColor,
   ledgerColor,
   litecoinColor,

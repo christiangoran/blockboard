@@ -1,4 +1,5 @@
-import { smallSphere, stars } from "../assets";
+import { ScrollParallax } from "react-just-parallax";
+import { planet, smallSphere, stars } from "../assets";
 import Heading from "./Heading";
 import PricingList from "./PricingList";
 import Section from "./Section";
@@ -8,14 +9,16 @@ const Pricing = () => {
   return (
     <Section className="overflow-hidden" id="pricing">
       <div className="container relative z-2">
-        <div className="hidden relative justify-center mb-[6.5rem] lg:flex">
-          <img
-            src={smallSphere}
-            className="relative z-1"
-            width={255}
-            height={255}
-            alt="Sphere"
-          />
+        <div className="hidden relative justify-center mb-[6.5rem] lg:flex h-[20rem]">
+          <ScrollParallax isAbsolutelyPositioned>
+            <img
+              src={planet}
+              className="fixed w-[15rem] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+              width={255}
+              height={255}
+              alt="Sphere"
+            />
+          </ScrollParallax>
           <div className="absolute top-1/2 left-1/2 w-[60rem] -translate-x-1/2 -translate-y-1/2 pointer-events-none">
             <img
               src={stars}
@@ -37,7 +40,7 @@ const Pricing = () => {
         </div>
         <div className="flex justify-center mt-10">
           <a
-            className="text-xs font-code font-bold tracking-wider uppercase border-b"
+            className="text-xs font-bold tracking-wider uppercase border-b font-code"
             href="/pricing"
           >
             See the full details

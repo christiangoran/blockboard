@@ -10,7 +10,6 @@ import {
   VideoBar,
   VideoChatMessage,
 } from "./design/Services";
-import { ScrollParallax } from "react-just-parallax";
 
 const Services = () => {
   const parallaxRef = useRef(null);
@@ -76,9 +75,7 @@ const Services = () => {
                   in our forum channels. Try it now!
                 </p>
               </div>
-              <ScrollParallax isAbsolutelyPositioned>
-                <PhotoChatMessage />
-              </ScrollParallax>
+              <PhotoChatMessage />
             </div>
             {/* right bottom bento box  */}
             <div className="p-4 bg-n-7 rounded-3xl overflow-hidden lg:min-h-[46rem]">
