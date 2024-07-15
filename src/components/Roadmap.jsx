@@ -8,7 +8,7 @@ const Roadmap = () => {
   return (
     <Section className="overflow-hidden" id="roadmap">
       <div className="container md:pb-10">
-        <Heading tag="Ready to get started" title="What we are working on" />
+        <Heading tag="Ready to get started" title="What we have for you" />
         <div className="relative grid gap-6 md:grid-cols-2 md:gap-4 md:pb-[7rem]">
           {roadmap.map((item) => {
             const status = item.status === "done" ? "Done" : "In progress";
@@ -35,7 +35,7 @@ const Roadmap = () => {
                     <div className="flex items-center justify-between max-w-[27rem] mb-8 md:mb-20">
                       <Tagline>{item.date}</Tagline>
 
-                      <div className="flex items-center px-4 bg-n-1 rounded text-n-8">
+                      {/* <div className="flex items-center px-4 rounded bg-n-1 text-n-8">
                         <img
                           src={item.status === "done" ? check2 : loading1}
                           className="mr-2.5"
@@ -44,7 +44,7 @@ const Roadmap = () => {
                           alt={status}
                         />
                         <div className="tagline">{status}</div>
-                      </div>
+                      </div> */}
                     </div>
                     <div className="mb-10 -my-10 -mx-15">
                       <img
@@ -55,7 +55,7 @@ const Roadmap = () => {
                         alt={item.title}
                       />
                     </div>
-                    <h4 className="h4 mb-4">{item.title}</h4>
+                    <h4 className="mb-4 h4">{item.title}</h4>
                     <p className="body-2 text-n-4">{item.text}</p>
                   </div>
                 </div>
