@@ -120,7 +120,7 @@ const Header = () => {
             src={blockboard_logo}
             width={190}
             height={40}
-            alt="Brainwave"
+            alt="Blockboard"
           />
         </a>
 
@@ -162,7 +162,7 @@ const Header = () => {
         </Button> */}
 
         <nav className="flex flex-row items-center justify-center align-middle">
-          {!currentUser ? loggedInIcons : loggedOutIcons}
+          {currentUser ? loggedInIcons : loggedOutIcons}
         </nav>
 
         <Button
