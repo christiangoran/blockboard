@@ -1,5 +1,6 @@
 {
   "name": "blockboard",
+  "home": "https://christiangoran.github.io/blockboard/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
