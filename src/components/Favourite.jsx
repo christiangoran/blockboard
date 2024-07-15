@@ -44,7 +44,7 @@ export const Favourite = (props) => {
       }}
       className="flex justify-center text-center"
     >
-      {currentUser ? (
+      {!currentUser ? (
         favourites.some(
           (favCurrency) => favCurrency.currency === currencyId
         ) ? (
