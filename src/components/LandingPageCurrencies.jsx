@@ -59,7 +59,9 @@ export const LandingPageCurrencies = () => {
           <thead>
             <tr className="h-[2rem]">
               <th className="border-r border-color-5">#</th>
-              <th className="pl-16 text-left border-r border-color-5">Name</th>
+              <th className="pl-4 text-left border-r md:pl-16 border-color-5">
+                Name
+              </th>
               <th className="border-r border-color-5">Price</th>
               <th className="hidden border-r border-color-5 md:table-cell">
                 Market Cap
@@ -76,13 +78,13 @@ export const LandingPageCurrencies = () => {
                 key={currency.id}
                 onClick={() => handleRowClick(currency.id)}
                 style={{ cursor: "pointer" }}
-                className=" hover:bg-n-8"
+                className=" hover:bg-n-4"
               >
                 <td className="border-r border-color-5 ">{currency.id}</td>
 
                 <td className="flex flex-row justify-start py-[.67rem] border-r border-color-5">
                   <img
-                    className="mr-4 ml-[4rem]"
+                    className="mr-2 md:mr-4 md:ml-[4rem]"
                     src={currency.logo_url}
                     alt={`${currency.name} logo`}
                     height={25}
