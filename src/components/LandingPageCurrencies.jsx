@@ -95,11 +95,11 @@ export const LandingPageCurrencies = () => {
                   {formatNumbers(currency.current_price)}
                 </td>
 
-                <td className="border-r border-color-5">
+                <td className="hidden border-r border-color-5 md:table-cell">
                   {formatLargeNumbers(currency.market_cap)}
                 </td>
 
-                <td className="border-r border-color-5">
+                <td className="hidden border-r border-color-5 md:table-cell">
                   {formatLargeNumbers(currency.total_volume)}
                 </td>
 
