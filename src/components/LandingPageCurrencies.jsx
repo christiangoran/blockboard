@@ -61,8 +61,12 @@ export const LandingPageCurrencies = () => {
               <th className="border-r border-color-5">#</th>
               <th className="pl-16 text-left border-r border-color-5">Name</th>
               <th className="border-r border-color-5">Price</th>
-              <th className="border-r border-color-5">Market Cap</th>
-              <th className="border-r border-color-5">Total Volume</th>
+              <th className="hidden border-r border-color-5 md:table-cell">
+                Market Cap
+              </th>
+              <th className="hidden border-r border-color-5 md:table-cell">
+                Total Volume
+              </th>
               <th className="">Select</th>
             </tr>
           </thead>
