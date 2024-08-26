@@ -30,7 +30,7 @@ const Pricing = () => {
           </div>
         </div>
         <Heading
-          tag="get started with Brainwave"
+          tag="get started with Blockboard"
           title="Pay once, use forever"
         />
         <div className="relative">

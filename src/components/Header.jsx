@@ -1,7 +1,6 @@
 import { useLocation } from "react-router-dom";
 import { disablePageScroll, enablePageScroll } from "scroll-lock";
 
-import { brainwave } from "../assets";
 import { blockboard_logo } from "../assets";
 import { navigation } from "../constants";
 
@@ -95,15 +94,15 @@ const Header = () => {
 
   const loggedOutIcons = (
     <>
-      <a
-        href="#signup"
+      <NavLink
+        to="#signup"
         className="hidden mr-8 transition-colors button text-n-1/50 hover:text-n-1 lg:block"
       >
         New account
-      </a>
-      <Button className="hidden lg:flex" href="#login">
-        Sign in
-      </Button>
+      </NavLink>
+      <NavLink to="/login">
+        <Button className="hidden lg:flex">Sign in</Button>
+      </NavLink>
     </>
   );
 
