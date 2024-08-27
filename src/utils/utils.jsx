@@ -4,6 +4,7 @@ import { jwtDecode } from "jwt-decode"; // Adjusted import statement
 // it will accept the data object returned by the API on login
 export const setTokenTimestamp = (data) => {
   // Check if the refresh token exists and is a string
+  console.log("The response data:", data);
   if (typeof data?.refresh_token === "string") {
     try {
       // Decode the refresh token to get the expiration timestamp
