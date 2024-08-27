@@ -62,7 +62,7 @@ const Header = () => {
   const loggedInIcons = (
     <>
       <NavLink
-        to={"/"}
+        to={"/blockboard/"}
         onClick={handleLogout}
         className="hidden mr-8 transition-colors button text-n-1/50 hover:text-n-1 lg:block"
       >
@@ -100,7 +100,7 @@ const Header = () => {
       >
         New account
       </NavLink>
-      <NavLink to="login/">
+      <NavLink to="/blockboard/login">
         <Button className="hidden lg:flex">Sign in</Button>
       </NavLink>
     </>

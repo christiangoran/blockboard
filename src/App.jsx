@@ -13,8 +13,8 @@ const App = () => {
       <div className="pt-[4.75] lg:pt-[5.25] overflow-hidden">
         <Header key={currentUser?.profile_image} />
         <Routes>
-          <Route path="/" element={<LandingPage />} />
-          <Route path="login/" element={<LoginPage />} />
+          <Route path="/blockboard/" element={<LandingPage />} />
+          <Route path="/blockboard/login" element={<LoginPage />} />
         </Routes>
         <ButtonGradient />
       </div>
