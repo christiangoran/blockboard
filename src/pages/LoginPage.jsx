@@ -33,17 +33,18 @@ const LoginPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      console.log("handleSubmit fired");
+      console.log("LoginPage - handleSubmit fired");
       const { data } = await axios.post("/dj-rest-auth/login/", signInData);
       console.log("request sent");
       setCurrentUser(data.user);
-      console.log("setCurrentUser fired, so there is a response");
-      console.log("data:", data);
+      console.log("LoginPage - setCurrentUser fired, so there is a response");
+      console.log("LoginPage - data:", data);
       setTokenTimestamp(data);
+      console.log("LoginPage - setTokenTimestamp fired");
       navigate("/");
-      console.log("navigated to /blockboard/");
+      console.log("LoginPage - navigated to /blockboard/");
     } catch (error) {
-      console.log("Error:", error);
+      console.log("LoginPagae - Error:", error);
       if (error.code === "ERR_NETWORK") {
         setErrors({
           non_field_errors: ["Network error, please try again later."],
