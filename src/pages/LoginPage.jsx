@@ -30,7 +30,7 @@ const LoginPage = () => {
       setCurrentUser(data.user);
       console.log("setCurrentUser fired, so there is a response");
       setTokenTimestamp(data);
-      navigate("/blockboard/");
+      navigate("/");
       console.log("navigated to /blockboard/");
     } catch (error) {
       setErrors(error.response?.data);

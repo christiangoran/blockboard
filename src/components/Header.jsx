@@ -100,7 +100,7 @@ const Header = () => {
       >
         New account
       </NavLink>
-      <NavLink to="/login">
+      <NavLink to="login/">
         <Button className="hidden lg:flex">Sign in</Button>
       </NavLink>
     </>
