@@ -1,17 +1,26 @@
+//React & React Hooks:
 import React, { useState } from "react";
+//Routing:
+import { Link, useNavigate } from "react-router-dom";
+//HTTP Request:
+import axios from "axios";
+
 import Footer from "../components/Footer";
 import Section from "../components/Section";
 import { blockboardSymbol } from "../assets";
 import Heading from "../components/Heading";
 import Button from "../components/Button";
-import { useCurrentUser } from "../context/CurrentUserContext";
+//Context/Hooks:
+import { useSetCurrentUser } from "../context/CurrentUserContext";
+import { useRedirect } from "../hooks/useRedirects";
+//Utilities:
 import { setTokenTimestamp } from "../utils/utils";
-import { Link, useNavigate } from "react-router-dom";
+
 import { Alert } from "@material-tailwind/react";
-import axios from "axios";
 
 const LoginPage = () => {
-  const setCurrentUser = useCurrentUser();
+  useRedirect("loggedIn");
+  const setCurrentUser = useSetCurrentUser();
   const [errors, setErrors] = useState({});
   const [signInData, setSignInData] = useState({
     username: "",
@@ -33,7 +42,18 @@ const LoginPage = () => {
       navigate("/");
       console.log("navigated to /blockboard/");
     } catch (error) {
-      setErrors(error.response?.data);
+      console.log("Error:", error);
+      if (error.code === "ERR_NETWORK") {
+        setErrors({
+          non_field_errors: ["Network error, please try again later."],
+        });
+      } else {
+        setErrors(
+          error.response?.data || {
+            non_field_errors: ["Something went wrong!"],
+          }
+        );
+      }
     }
   };
 
@@ -86,11 +106,6 @@ const LoginPage = () => {
                   />
                 </div>
               </div>
-              {errors.username?.map((message, idx) => (
-                <Alert variant="warning" key={idx}>
-                  {message}
-                </Alert>
-              ))}
 
               {/* Password */}
               <div>
@@ -123,18 +138,12 @@ const LoginPage = () => {
                   />
                 </div>
               </div>
-              {errors.password?.map((message, idx) => (
-                <Alert variant="warning" key={idx}>
-                  {message}
-                </Alert>
-              ))}
 
               <div>
                 <Button
                   type="submit"
                   className="flex justify-center w-full"
                   white
-                  onClick={handleSubmit}
                 >
                   Sign in
                 </Button>
@@ -150,6 +159,23 @@ const LoginPage = () => {
                 Start a 14 day free trial
               </Link>
             </p>
+            {errors?.username?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
+            {errors?.password?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
+            {/* General Errors Message popup */}
+            {/* Using the errors state */}
+            {errors?.non_field_errors?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
           </div>
         </div>
       </Section>
