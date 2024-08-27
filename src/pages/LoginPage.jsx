@@ -38,6 +38,7 @@ const LoginPage = () => {
       console.log("request sent");
       setCurrentUser(data.user);
       console.log("setCurrentUser fired, so there is a response");
+      console.log("data:", data);
       setTokenTimestamp(data);
       navigate("/");
       console.log("navigated to /blockboard/");
