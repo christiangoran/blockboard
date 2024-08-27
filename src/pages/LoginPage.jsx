@@ -24,10 +24,14 @@ const LoginPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      console.log("handleSubmit fired");
       const { data } = await axios.post("/dj-rest-auth/login/", signInData);
+      console.log("request sent");
       setCurrentUser(data.user);
+      console.log("setCurrentUser fired, so there is a response");
       setTokenTimestamp(data);
       navigate("/blockboard/");
+      console.log("navigated to /blockboard/");
     } catch (error) {
       setErrors(error.response?.data);
     }
@@ -39,7 +43,7 @@ const LoginPage = () => {
 
   return (
     <>
-      <Section className="overflow-hidden" id="login">
+      <Section className="h-[90vh] overflow-hidden" id="login">
         <div className="flex flex-col justify-center flex-1 min-h-full px-6 py-12 lg:px-8">
           <div className="sm:mx-auto sm:w-full sm:max-w-sm">
             <div className="w-[6rem] aspect-square m-auto p-[0.2rem] bg-conic-gradient rounded-full mb-8">
@@ -130,6 +134,7 @@ const LoginPage = () => {
                   type="submit"
                   className="flex justify-center w-full"
                   white
+                  onClick={handleSubmit}
                 >
                   Sign in
                 </Button>
